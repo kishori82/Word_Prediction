@@ -267,9 +267,8 @@ char *predict_word( HASH *hash, char **words, int num) {
 
     cands = get_candidates(precword,  hash, words,  num) ;
 
-    sel_cand_num=  rand()%(cands->n);
-
     if(cands->n > 0 ) {
+        sel_cand_num=  rand()%(cands->n);
         predword= (char *)malloc( (strlen(cands->words[sel_cand_num])+1)*sizeof(char));
         strncpy(predword,cands->words[sel_cand_num], strlen(cands->words[sel_cand_num]));
         predword[strlen(cands->words[sel_cand_num])]='\0';
